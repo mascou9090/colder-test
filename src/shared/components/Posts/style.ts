@@ -1,3 +1,44 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  width: 752px;
+  min-height: 240px;
+  border-radius: 16px;
+  margin:1.4rem auto;
+  border: 1px solid #999999;
+  background-color: #ffffff;
+  header {
+    background-color:#7695ec;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    border-radius: 16px 16px 0px 0px;
+    h3 {
+      padding: 1.5rem;
+      color:#ffffff;
+      }
+      div {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.4rem;
+        width: 7rem;
+      }
+    }
+  div {
+    div {
+      &:nth-child(1) {
+      margin: 1rem 2rem 1rem 1rem;
+      display:flex;
+      justify-content: space-between;
+      color:#777777;
+      font-weight: 700;
+      font-size: 18px;
+      }
+      &:nth-child(2) {
+      margin: 1rem;
+      font-weight: 700;
+      font-size: 18px;
+      }
+    }
+  }
+`;

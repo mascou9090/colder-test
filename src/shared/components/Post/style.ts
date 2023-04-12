@@ -36,6 +36,7 @@ export const Container = styled.div`
     border-radius: 8px;
     margin:6.4rem 0rem 0rem 38rem;
     color:#ffffff;
+    cursor: pointer;
     }
   }
   textarea {
