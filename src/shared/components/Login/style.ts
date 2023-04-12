@@ -28,9 +28,8 @@ export const Container = styled.div`
 `;
 
 export const Button = styled.div<{valueInput?: string}>`
-    //display:inline;
     margin: 1rem 0rem 0rem 22.5rem !important;
-    
+    transition: 0.8s;
     width: 111px;
     color: #ffffff;
     background-color: ${
@@ -54,6 +53,7 @@ export const Button = styled.div<{valueInput?: string}>`
         props.valueInput == '' ? 'not-allowed' : 'pointer'
         )};
     }
+    @media (max-width: 500px) {
+      margin:1rem 0 0 9rem !important;
+    }
 `;
-
-//not-allowed

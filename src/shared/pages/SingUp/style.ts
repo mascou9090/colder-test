@@ -5,7 +5,10 @@ export const Container = styled.div`
   align-items:center;
   border-radius: 12px;
   border: 1px solid #cccccc;
-  width: 500px;
+  max-width: 500px;
   height: 205px;
   background-color: #ffffff;
+  @media (max-width: 500px) {
+    min-width: 400px;
+  }
 `;
