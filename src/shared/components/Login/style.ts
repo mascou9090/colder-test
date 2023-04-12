@@ -18,7 +18,6 @@ export const Container = styled.div`
     }
     input {
       margin:0.5rem 0.7rem 0.2rem 0.7rem;
-      color:#777777;
       padding:0.4rem 0.6rem;
       border-radius: 5px;
       border: solid 1px #777777;
@@ -34,7 +33,7 @@ export const Button = styled.div<{valueInput?: string}>`
     color: #ffffff;
     background-color: ${
       props => (
-        props.valueInput == '' ? '#ccc' : '#7695ec'
+        props.valueInput === '' ? '#ccc' : '#7695ec'
         )
       };
     border: transparent;
@@ -43,14 +42,14 @@ export const Button = styled.div<{valueInput?: string}>`
     font-weight: 600;
     cursor:${
       props => (
-        props.valueInput == '' ? 'not-allowed' : 'pointer'
+        props.valueInput === '' ? 'not-allowed' : 'pointer'
         )};
     a{
       text-decoration: none;
       color: #ffffff;
       cursor:${
       props => (
-        props.valueInput == '' ? 'not-allowed' : 'pointer'
+        props.valueInput === '' ? 'not-allowed' : 'pointer'
         )};
     }
     @media (max-width: 500px) {

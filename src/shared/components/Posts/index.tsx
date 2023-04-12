@@ -1,7 +1,14 @@
 import * as C from './style';
 
-const Posts = () => {
+export const Posts = () => {
   return (
-    <div>index</div>
+    <C.Container>
+      <div>
+        Titulo 
+      </div>
+      <div>
+        content
+      </div>
+    </C.Container>
   )
 }
