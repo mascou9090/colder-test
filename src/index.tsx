@@ -5,6 +5,8 @@ import { createBrowserRouter,RouterProvider} from 'react-router-dom';
 import { SignUp } from './shared/pages/SingUp';
 import { MidMain } from './shared/pages/MidMain';
 import { ErrorPage } from './shared/pages/ErrorPage';
+import { Provider } from 'react-redux';
+import store from './shared/redux/store';
 
 const router = createBrowserRouter([{
   path: "/",
@@ -29,6 +31,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

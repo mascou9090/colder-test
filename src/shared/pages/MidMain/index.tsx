@@ -5,17 +5,13 @@ import { Posts } from '../../components/Posts';
 import * as C from './style';
 
 export const MidMain = () => {
-
   return (
-    <>
-      <C.Container>
-        <Header />
-        <Post />
-        <Posts />
-        <Posts />
-        <Posts />
-      </C.Container>
-      {true && <ModalDelet />}
-    </>
+    <C.Container>
+      <Header />
+      <Post />
+      <Posts />
+    </C.Container>
   )
 }
+
+//{true && <ModalDelet />}
