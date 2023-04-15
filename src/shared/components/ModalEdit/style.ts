@@ -12,7 +12,7 @@ export const ModalContainer = styled.section`
 
 export const ModalInsid = styled.div`
       width:660px;
-      height:146px;
+      height:334px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -22,18 +22,33 @@ export const ModalInsid = styled.div`
       top: 40%;
       left: 30%;
       border-radius: 16px;
-        border: 1px solid #999999;
+      border: 1px solid #999999;
       p {
-        padding: 1rem 1.9rem;
-        border-radius: 16px 16px 0 0;
+        padding: 0.6rem 1.4rem 0rem;
+        //border-radius: 16px 16px 0 0;
         font-weight: 700;
         font-size: 22px;
-        color:#000;
+        //color:#000;
       }
    
       div {
-        &:nth-child(2) {
-          margin:0 0 0 21.5rem;
+        flex-direction: column;
+        margin:1rem 1.4rem 0;
+        label {
+          margin: 0rem 0 0.4rem;
+        }
+        input {
+          margin:0.1rem 0 1.4rem;
+          padding: 0 0.5rem;
+          background-color: #ffffff;
+          border: 1px solid #777777;
+          border-radius: 8px;
+          height: 32px;
+          width: 612px;
+        }
+        &:nth-child(3) {
+          padding: 0rem 0rem 0rem 22.4rem;
+          margin:0;
         }
       }
     
@@ -42,7 +57,7 @@ export const ModalInsid = styled.div`
       width: 120px;
       height:32px;
       margin:0.8rem;
-      border: 1px solid #999999;
+      border: 1px solid #000000;
       border-radius: 8px;
       cursor: pointer;
       font-weight: 700;
@@ -50,8 +65,22 @@ export const ModalInsid = styled.div`
       line-height: 18.75px;
 
       &:nth-child(2) {
-        background-color:#ff5151;
+        background-color:#47B960;
         color:#ffffff;
+        border: none;
       }
     }
 `;
+
+export const inputDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  textarea {
+    margin-top: 0.5rem;
+    padding: 0.4rem;
+    border-radius: 8px;
+    min-height: 74px;
+    width: 612px;
+  }
+`;
+

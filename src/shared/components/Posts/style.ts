@@ -22,6 +22,10 @@ export const Container = styled.div`
         justify-content: space-between;
         padding: 1.4rem;
         width: 7rem;
+        transition: 0.6s;
+        svg {
+          cursor: pointer;
+        }
       }
     }
   div {

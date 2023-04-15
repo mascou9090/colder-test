@@ -1,28 +1,22 @@
 import { useState } from 'react';
 import * as C from './style';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { loginUser, logoutUser } from '../../redux/user/actions';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../actions/actions';
 
 export const Login = () => {
   const [inputValue, setInputValue] = useState('');
 
-  const { currentUser } = useSelector((rootReducer: any) => rootReducer.userReducer)
   const dispatch = useDispatch();
-  
+
   const handlePrevent = (e:any) => {
     !inputValue && e.preventDefault();
     handleLoginClick();
-  }
+    }
 
   const handleLoginClick = () => {
-    dispatch(loginUser({ email: 'mascou@email.com'}))
+    dispatch(loginUser({ email: inputValue}))
   }
-
-  const handleLogoutClick = () => {
-    dispatch(logoutUser());
-  }
-
 
   return (
     <C.Container>

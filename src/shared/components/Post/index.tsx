@@ -1,6 +1,7 @@
 import * as C from './style';
 
 export const Post = () => {
+  
   return (
     <C.Container>
       <h2>What's on your mind?</h2>
