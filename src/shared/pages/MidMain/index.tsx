@@ -5,6 +5,7 @@ import { Posts } from '../../components/Posts';
 import * as C from './style';
 import { ModalDelet } from '../../components/Modal';
 import { ModalEdit } from '../../components/ModalEdit';
+import { Load } from '../../components/Load';
 
 export const MidMain = () => {
   
@@ -19,11 +20,7 @@ export const MidMain = () => {
     <C.Container>
       <Header />
       <Post />
-      {!currentDatas && (
-        <div>
-          <h2>Carregando...</h2>
-        </div>
-      )}
+      {!currentDatas && <Load />}
       {currentDatas && currentDatas?.results.map(
         (el:any) => 
           <Posts key={el.id} props={el} />

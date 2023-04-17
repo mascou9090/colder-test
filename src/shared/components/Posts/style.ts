@@ -30,6 +30,10 @@ export const Container = styled.div`
         }
       }
     }
+    h4 {
+      overflow: hidden;
+      max-width: 500px;
+    }
   div {
     div {
       &:nth-child(1) {
