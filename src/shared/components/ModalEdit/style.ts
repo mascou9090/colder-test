@@ -16,7 +16,7 @@ export const ModalInsid = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: center;
-      margin:0rem 1rem 2rem 0rem;
+      margin:-4rem 0rem ;
       background-color:#ffffff;
       position:fixed;
       top: 40%;

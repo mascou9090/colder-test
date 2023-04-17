@@ -1,13 +1,14 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import * as C from './style';
-import { logoutModal } from '../../actions/actions';
+import { logoutModalDelet } from '../../actions/actions';
+import { isOpenModalDelet } from '../../redux/modalDelet/action-types';
 
 export const ModalDelet = () => {
 
   const dispatch = useDispatch();
 
   const handleCancelModal = () => {
-    dispatch(logoutModal());
+    dispatch(logoutModalDelet(isOpenModalDelet.CLOSED));
   }
 
 

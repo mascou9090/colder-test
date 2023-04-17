@@ -1,4 +1,4 @@
-import { isOpenModal } from "../../actions/action-types"
+import { isOpenModalEdit } from "./action-types"
 
 const initialState = {
   currentModalEdit: false
@@ -6,9 +6,9 @@ const initialState = {
 
 export const modalReducerEdit = (state = initialState, action:any) => {
   switch(action.type) {
-    case isOpenModal.OPEN:
+    case isOpenModalEdit.OPEN:
       return { ...state, currentModalEdit: true};
-    case isOpenModal.CLOSED:
+    case isOpenModalEdit.CLOSED:
       return { ...state, currentModalEdit: false};
     default:
       return state;

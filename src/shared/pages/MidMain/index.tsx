@@ -8,8 +8,10 @@ import { ModalEdit } from '../../components/ModalEdit';
 
 export const MidMain = () => {
 
-  const { currentModalDelet } = useSelector((rootReducer:any) => rootReducer.modalReducerDelet)
-  const { currentModalEdit } = useSelector((rootReducer:any) => rootReducer.modalReducerEdit)
+  const { currentModalDelet } = useSelector(
+    (rootReducer:any) => rootReducer.modalReducerDelet);
+  const { currentModalEdit } = useSelector(
+    (rootReducer:any) => rootReducer.modalReducerEdit);
 
   return (
     <C.Container>

@@ -1,13 +1,14 @@
 import { useDispatch } from 'react-redux';
 import * as C from './style';
-import { logoutModal } from '../../actions/actions';
+import { logoutModalEdit } from '../../actions/actions';
+import { isOpenModalEdit } from '../../redux/modalEdit/action-types';
 
 export const ModalEdit = () => {
 
   const dispatch = useDispatch();
 
   const handleCancelModal = () => {
-    dispatch(logoutModal());
+    dispatch(logoutModalEdit(isOpenModalEdit.CLOSED));
   }
 
 

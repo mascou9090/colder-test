@@ -1,4 +1,4 @@
-import { isOpenModal } from "../../actions/action-types";
+import { isOpenModalDelet } from "./action-types";
 
 const inicitalState = {
   currentModalDelet: false
@@ -6,9 +6,9 @@ const inicitalState = {
 
 export const modalReducerDelet = (state = inicitalState, action:any) => {
   switch(action.type) {
-    case isOpenModal.OPEN:
+    case isOpenModalDelet.OPEN:
       return { ...state, currentModalDelet: true}
-    case isOpenModal.CLOSED:
+    case isOpenModalDelet.CLOSED:
       return { ...state, currentModalDelet: false}
     default:
       return state;

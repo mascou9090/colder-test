@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.div<{valueInput?: boolean}>`
   width: 752px;
   height: 334px;
   border-radius: 16px;
@@ -29,14 +29,16 @@ export const Container = styled.div`
       border:1px solid #777777;
     }
   &:nth-child(4) {
-    background-color:#7695ec ;
+    background-color:${props => (
+      props.valueInput === false ? '#ccc' : '#7695ec'
+    )};
     width:120px;
     height:32px;
     padding:0.4rem 2.2rem;
     border-radius: 8px;
     margin:6.4rem 0rem 0rem 38rem;
     color:#ffffff;
-    cursor: pointer;
+    cursor: ${props => props.valueInput === false ? 'not-allowed' : 'pointer'};
     }
   }
   textarea {
