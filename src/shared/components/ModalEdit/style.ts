@@ -25,10 +25,8 @@ export const ModalInsid = styled.div`
       border: 1px solid #999999;
       p {
         padding: 0.6rem 1.4rem 0rem;
-        //border-radius: 16px 16px 0 0;
         font-weight: 700;
         font-size: 22px;
-        //color:#000;
       }
    
       div {
@@ -49,6 +47,9 @@ export const ModalInsid = styled.div`
         &:nth-child(3) {
           padding: 0rem 0rem 0rem 22.4rem;
           margin:0;
+          @media (max-width: 800px) {
+            padding:0 0 1rem 2rem;
+          }
         }
       }
     
@@ -70,6 +71,28 @@ export const ModalInsid = styled.div`
         border: none;
       }
     }
+    @media (max-width: 1200px) {
+      left:25%;
+    }
+    @media (max-width: 1000px) {
+      left:20%;
+    }
+    @media (max-width: 900px) {
+      left:15%;
+    }
+    @media (max-width: 800px) {
+      left:30%;
+      width: 350px;
+      p {
+        padding: 1rem 8rem 0;
+      }
+      div > input {
+        width: 300px;
+      }
+    }
+    @media (max-width: 550px) {
+      left:5%;
+    }
 `;
 
 export const inputDiv = styled.div`
@@ -81,6 +104,11 @@ export const inputDiv = styled.div`
     border-radius: 8px;
     min-height: 74px;
     width: 612px;
+  }
+  @media (max-width: 800px) {
+    textarea {
+      width:300px;
+    }
   }
 `;
 

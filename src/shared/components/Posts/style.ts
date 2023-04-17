@@ -17,6 +17,7 @@ export const Container = styled.div`
     h3 {
       padding: 1.5rem;
       color:#ffffff;
+      overflow: hidden;
       }
       div {
         display: flex;
