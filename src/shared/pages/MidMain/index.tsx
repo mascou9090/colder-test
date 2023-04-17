@@ -10,8 +10,6 @@ export const MidMain = () => {
   
   const { currentDatas } = useSelector(
     (rootReducer:any) => rootReducer.getReducer);
-  console.log("Console do MidMain: ", currentDatas?.results);
-
   const { currentModalDelet } = useSelector(
     (rootReducer:any) => rootReducer.modalReducerDelet);
   const { currentModalEdit } = useSelector(

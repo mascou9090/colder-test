@@ -6,14 +6,10 @@ import { isOpenModalEdit } from '../../redux/modalEdit/action-types';
 
 export const Posts = ({props}: any) => {
 
-  const { username, title, created_datetime, content } = props
-
+  const { id, username, title, created_datetime, content } = props
 
   const calculatorTime = () => {
     const dataNow = new Date();
-    console.log("Data de hoje ",dataNow.getTime())
-    console.log("Data de hoje ",new Date(created_datetime).getTime())
-
     const totalTime = dataNow.getTime() - new Date(created_datetime).getTime()
     return new Date(totalTime).getMinutes();
   }
@@ -24,14 +20,13 @@ export const Posts = ({props}: any) => {
     const dispatch = useDispatch()
     
     const handleModalDelet = () => {
-      dispatch(loginModalDelet(isOpenModalDelet.OPEN))
+      dispatch(loginModalDelet(isOpenModalDelet.OPEN, id))
     }
     
     const handleModalEdit = () => {
-      dispatch(loginModalEdit(isOpenModalEdit.OPEN))
+      dispatch(loginModalEdit(isOpenModalEdit.OPEN, id))
     }
     
-  console.log(currentUser)
   return (
     <C.Container>
       <header>
@@ -57,7 +52,7 @@ export const Posts = ({props}: any) => {
       </header>
       <div>
         <div>
-          <h4>{username}</h4>
+          <h4>@{username}</h4>
           <p>{calculatorTime()} minutes ago</p>
         </div>
         <div>

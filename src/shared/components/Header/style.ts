@@ -12,4 +12,7 @@ export const Container = styled.header`
     font-weight: 700;
     padding: 1.6rem 2rem;
   }
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
 `;

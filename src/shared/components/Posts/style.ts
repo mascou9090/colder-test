@@ -7,6 +7,7 @@ export const Container = styled.div`
   margin:1.4rem auto;
   border: 1px solid #999999;
   background-color: #ffffff;
+  transition: 0.8s;
   header {
     background-color:#7695ec;
     display: flex;
@@ -45,5 +46,11 @@ export const Container = styled.div`
       overflow-y: auto;
       }
     }
+  }
+  @media (max-width: 800px) {
+    width: 500px;
+  }
+  @media (max-width: 550px) {
+    width: 300px;
   }
 `;

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background-color:#ffffff;
+  transition: 0.8s;
   h2 {
     margin: 1.6rem 0 1.5rem 1.6rem;
     font-style: normal;
@@ -21,6 +22,15 @@ export const Container = styled.div`
       padding:0.4rem 0.6rem;
       border-radius: 5px;
       border: solid 1px #777777;
+    }
+  }
+  @media (max-width:400px) {
+    width:300px
+    h2 {
+      margin:0.5rem;
+    }
+    div {
+      margin: 0.5rem;
     }
   }
   
