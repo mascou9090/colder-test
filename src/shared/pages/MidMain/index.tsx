@@ -7,6 +7,10 @@ import { ModalDelet } from '../../components/Modal';
 import { ModalEdit } from '../../components/ModalEdit';
 
 export const MidMain = () => {
+  
+  const { currentDatas } = useSelector(
+    (rootReducer:any) => rootReducer.getReducer);
+  console.log("Console do MidMain: " + currentDatas);
 
   const { currentModalDelet } = useSelector(
     (rootReducer:any) => rootReducer.modalReducerDelet);
@@ -17,10 +21,14 @@ export const MidMain = () => {
     <C.Container>
       <Header />
       <Post />
-      <Posts />
+      {!currentDatas && (
+        <div>
+          <h2>Carregando...</h2>
+        </div>
+      )}
+      {currentDatas && currentDatas.results?.map((el:any) => <Posts key={el.id} el={el} />)}
       {currentModalDelet && <ModalDelet />}
       {currentModalEdit && <ModalEdit />}
     </C.Container>
   )
 }
-//

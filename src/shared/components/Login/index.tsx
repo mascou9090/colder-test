@@ -2,7 +2,9 @@ import { useState } from 'react';
 import * as C from './style';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { loginUser } from '../../actions/actions';
+import { getPosts, loginUser } from '../../actions/actions';
+import { actionGetRequest } from '../../actions/actionGet';
+
 
 export const Login = () => {
   const [inputValue, setInputValue] = useState('');
@@ -12,11 +14,23 @@ export const Login = () => {
   const handlePrevent = (e:any) => {
     !inputValue && e.preventDefault();
     handleLoginClick();
+    handleRequestGet();
     }
 
   const handleLoginClick = () => {
     dispatch(loginUser({ email: inputValue}))
   }
+
+  const handleRequestGet = async () => {
+    const posts = await actionGetRequest();
+    
+    const postJson = JSON.stringify(posts);
+
+    dispatch(getPosts({posts}));
+    
+    console.log("Resultado LoginObj: " + postJson)
+  }
+
 
   return (
     <C.Container>

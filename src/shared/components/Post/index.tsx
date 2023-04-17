@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as C from './style';
 import { useState, useEffect} from 'react';
 import { loginPost } from '../../actions/actions';
+import { actionPostRequest } from '../../actions/actionRequest';
 
 export const Post = () => {
   
@@ -23,26 +24,11 @@ export const Post = () => {
 
   const handlePostClick = () => {
     dispatch(loginPost({title: inputValue, content: textValue}));
-    const actionPostRequest = async (data: any) => {
-  
-      try {
-        const response = await fetch("https://dev.codeleat.co.uk/careers/");
-        const json = await response.json()
-        console.log(json);
-       
-      } catch(e) {
-        console.log(`Error: ${e}`);
-      } finally {
-        console.log("Finalmente acabou")
-      }
-  }
     actionPostRequest({
       "username": currentUser.email,
       "title": inputValue,
-      "current": textValue,
-    })
-  
-    console.log(`username: ${currentUser.email}, title: ${inputValue}, current: ${textValue}`);
+      "content": textValue,
+    });  
   };
 
 

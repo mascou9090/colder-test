@@ -4,10 +4,11 @@ import { loginModalDelet, loginModalEdit } from '../../actions/actions';
 import { isOpenModalDelet } from '../../redux/modalDelet/action-types';
 import { isOpenModalEdit } from '../../redux/modalEdit/action-types';
 
-export const Posts = () => {
+export const Posts = (props: any) => {
 
-  const { currentUser } = useSelector((rootReducer:any) => rootReducer.userReducer);
   
+  const { currentUser } = useSelector((rootReducer:any) => rootReducer.userReducer);
+  console.log("Resultado Posts: " + props.posts.results);
   const dispatch = useDispatch()
 
   const handleModalDelet = () => {
@@ -19,9 +20,9 @@ export const Posts = () => {
   }
 
   return (
-    <C.Container>
+    <C.Container key={props.posts.results.id}>
       <header>
-        <h3>Titulo</h3>
+        <h3>{props.posts.results.title}</h3>
         {currentUser && (
           <div>
            <svg onClick={handleModalDelet}
@@ -41,19 +42,12 @@ export const Posts = () => {
       </header>
       <div>
         <div>
-          <h4>@Vini</h4>
-          <p>4 minutes ago</p>
+          <h4>{props.posts.results.username}</h4>
+          <p>{props.posts.results.created_datetime}</p>
         </div>
         <div>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad temporibus, architecto iure quo in minus, facere obcaecati sed reiciendis rerum, quasi ea libero expedita non deleniti. In magni obcaecati nihil!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem possimus accusantium numquam nostrum ea recusandae omnis at corrupti alias cum deserunt odit, vero tempora obcaecati architecto asperiores minima atque qui!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione enim nobis quia blanditiis iusto iste obcaecati harum omnis voluptate, optio, incidunt voluptatum recusandae fuga rerum officiis sequi, beatae earum molestiae.
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus sit repellat similique, vel delectus cupiditate quas, ullam pariatur cum blanditiis amet necessitatibus rem harum perspiciatis alias beatae ipsum sint! Voluptatibus.
-        </div>
+          {props.posts.results.content}
+       </div>
       </div>
     </C.Container>
   )
