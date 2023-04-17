@@ -37,11 +37,12 @@ export const Container = styled.div`
       color:#777777;
       font-weight: 700;
       font-size: 18px;
-      }
-      &:nth-child(2) {
+    }
+    &:nth-child(2) {
       margin: 1rem;
       font-weight: 700;
       font-size: 18px;
+      overflow-y: auto;
       }
     }
   }

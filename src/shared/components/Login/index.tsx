@@ -22,13 +22,8 @@ export const Login = () => {
   }
 
   const handleRequestGet = async () => {
-    const posts = await actionGetRequest();
-    
-    const postJson = JSON.stringify(posts);
-
-    dispatch(getPosts({posts}));
-    
-    console.log("Resultado LoginObj: " + postJson)
+    const posts = await actionGetRequest();  
+    dispatch(getPosts(posts));
   }
 
 

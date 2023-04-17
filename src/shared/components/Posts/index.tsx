@@ -4,26 +4,40 @@ import { loginModalDelet, loginModalEdit } from '../../actions/actions';
 import { isOpenModalDelet } from '../../redux/modalDelet/action-types';
 import { isOpenModalEdit } from '../../redux/modalEdit/action-types';
 
-export const Posts = (props: any) => {
+export const Posts = ({props}: any) => {
+
+  const { username, title, created_datetime, content } = props
+
+
+  const calculatorTime = () => {
+    const dataNow = new Date();
+    console.log("Data de hoje ",dataNow.getTime())
+    console.log("Data de hoje ",new Date(created_datetime).getTime())
+
+    const totalTime = dataNow.getTime() - new Date(created_datetime).getTime()
+    return new Date(totalTime).getMinutes();
+  }
 
   
-  const { currentUser } = useSelector((rootReducer:any) => rootReducer.userReducer);
-  console.log("Resultado Posts: " + props.posts.results);
-  const dispatch = useDispatch()
-
-  const handleModalDelet = () => {
-    dispatch(loginModalDelet(isOpenModalDelet.OPEN))
-  }
-
-  const handleModalEdit = () => {
-    dispatch(loginModalEdit(isOpenModalEdit.OPEN))
-  }
-
+  const { currentUser } = useSelector(
+    (rootReducer:any) => rootReducer.userReducer);
+    const dispatch = useDispatch()
+    
+    const handleModalDelet = () => {
+      dispatch(loginModalDelet(isOpenModalDelet.OPEN))
+    }
+    
+    const handleModalEdit = () => {
+      dispatch(loginModalEdit(isOpenModalEdit.OPEN))
+    }
+    
+  console.log(currentUser)
   return (
-    <C.Container key={props.posts.results.id}>
+    <C.Container>
       <header>
-        <h3>{props.posts.results.title}</h3>
-        {currentUser && (
+        <h3>{title}</h3>
+        
+        {currentUser.email === username && (
           <div>
            <svg onClick={handleModalDelet}
             width="19" height="24" viewBox="0 0 19 24" fill="none"
@@ -39,18 +53,17 @@ export const Posts = (props: any) => {
           </svg>
         </div>
         )}
+      
       </header>
       <div>
         <div>
-          <h4>{props.posts.results.username}</h4>
-          <p>{props.posts.results.created_datetime}</p>
+          <h4>{username}</h4>
+          <p>{calculatorTime()} minutes ago</p>
         </div>
         <div>
-          {props.posts.results.content}
+          {content}
        </div>
       </div>
     </C.Container>
   )
 }
-
-

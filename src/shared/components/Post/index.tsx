@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import * as C from './style';
 import { useState, useEffect} from 'react';
-import { loginPost } from '../../actions/actions';
+import { getPosts, loginPost } from '../../actions/actions';
 import { actionPostRequest } from '../../actions/actionRequest';
+import { actionGetRequest } from '../../actions/actionGet';
 
 export const Post = () => {
   
@@ -22,13 +23,15 @@ export const Post = () => {
     handlePostClick();
   };
 
-  const handlePostClick = () => {
+  const handlePostClick = async () => {
     dispatch(loginPost({title: inputValue, content: textValue}));
     actionPostRequest({
       "username": currentUser.email,
       "title": inputValue,
       "content": textValue,
-    });  
+    });
+    const posts = await actionGetRequest();   
+    dispatch(getPosts(posts));
   };
 
 
