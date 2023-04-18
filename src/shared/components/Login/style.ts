@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   background-color:#ffffff;
   transition: 0.8s;
+  min-width:none;
   h2 {
     margin: 1.6rem 0 1.5rem 1.6rem;
     font-style: normal;
