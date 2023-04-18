@@ -44,7 +44,7 @@ export const Container = styled.div<{valueInput?: boolean}>`
   }
   textarea {
     margin-top: 1.8rem;
-    padding: 0.6rem 0.7rem;
+    padding: 0.6rem 0.4rem;
     border-radius: 8px;
     position:absolute;
   }
