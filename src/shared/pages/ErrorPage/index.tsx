@@ -3,7 +3,8 @@ import * as C from './style';
 export const ErrorPage = () => {
   return (
     <C.Container>
-      <p>Error - 404</p>
+      <h2>Error - 404</h2>
+      <p>Verifique sua URL ou volte para a página de início CodeLeap</p>
     </C.Container>
   )
 }

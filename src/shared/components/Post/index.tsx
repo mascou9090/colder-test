@@ -17,7 +17,6 @@ export const Post = () => {
     inputValue && textValue ? setCorButton(true) : setCorButton(false);
   }, [inputValue, textValue]);
 
-
   const handlePrevent = (e:any) => {
     !inputValue && !textValue && e.preventDefault(); 
     handlePostClick();

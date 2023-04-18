@@ -24,6 +24,7 @@ export const ModalDelet = () => {
     actionDeleteRequest(id);
     const posts = await actionGetRequest();   
     dispatch(getPosts(posts));
+    dispatch(logoutModalDelet(isOpenModalDelet.CLOSED));
   }
 
 

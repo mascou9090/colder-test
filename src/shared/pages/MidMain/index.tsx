@@ -11,8 +11,6 @@ import { useEffect, useState } from 'react';
 export const MidMain = () => {
   const [datas, setDatas] = useState();
 
-
-
   const { currentDatas } = useSelector(
     (rootReducer: any) => rootReducer.getReducer);
   const { currentModalDelet } = useSelector(
@@ -23,7 +21,6 @@ export const MidMain = () => {
   useEffect(() => {
     setDatas(currentDatas);
   },[datas]);
-
 
   return (
     <C.Container>

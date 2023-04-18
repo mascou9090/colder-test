@@ -6,7 +6,7 @@ import { isOpenModalEdit } from '../../redux/modalEdit/action-types';
 
 export const Posts = ({props}: any) => {
 
-  const { id, username, title, created_datetime, content } = props
+  const { id, username, title, created_datetime, content } = props;
 
   const calculatorTime = () => {
     const dataNow = new Date();
@@ -14,18 +14,18 @@ export const Posts = ({props}: any) => {
     return new Date(totalTime).getMinutes();
   }
 
-  
   const { currentUser } = useSelector(
     (rootReducer:any) => rootReducer.userReducer);
-    const dispatch = useDispatch()
-    
-    const handleModalDelet = () => {
-      dispatch(loginModalDelet(isOpenModalDelet.OPEN, id))
-    }
-    
-    const handleModalEdit = () => {
-      dispatch(loginModalEdit(isOpenModalEdit.OPEN, id))
-    }
+
+  const dispatch = useDispatch();
+  
+  const handleModalDelet = () => {
+    dispatch(loginModalDelet(isOpenModalDelet.OPEN, id))
+  };
+  
+  const handleModalEdit = () => {
+    dispatch(loginModalEdit(isOpenModalEdit.OPEN, id))
+  };
     
   return (
     <C.Container>

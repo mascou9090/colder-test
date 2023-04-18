@@ -1,7 +1,17 @@
 import styled from 'styled-components';
 
-export const Container = styled.header`
+export const Container = styled.div`
   display:flex;
-  justify-content: start;
-  margin:2rem
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height:90%;
+  margin: 8rem auto;
+  h2 {
+    font-size: 5rem;
+  }
+  p {
+    font-size: 1.4rem;
+  }
 `;

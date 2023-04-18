@@ -29,6 +29,7 @@ export const ModalEdit = () => {
     actionPatchRequest(id, title, content);
     const posts = await actionGetRequest();   
     dispatch(getPosts(posts));
+    dispatch(logoutModalEdit(isOpenModalEdit.CLOSED));
   }
 
 
