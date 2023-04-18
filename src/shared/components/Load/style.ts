@@ -5,7 +5,7 @@ export const Container = styled.div`
   width: 40px;
   height: 40px;
   border: 8px solid #eee;
-  border-bottom-color: rebeccapurple;
+  border-bottom-color: #7695EC;
   border-radius: 50%;
   animation: rotate 1.5s linear infinite;
   margin: 0 auto;
@@ -18,5 +18,4 @@ export const Container = styled.div`
     transform: rotate(360deg);
   }
 }
-
 `;

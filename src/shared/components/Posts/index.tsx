@@ -53,7 +53,7 @@ export const Posts = ({props}: any) => {
       <div>
         <div>
           <h4>@{username}</h4>
-          <p>{calculatorTime()} minutes ago</p>
+          <p>{calculatorTime()} min ago</p>
         </div>
         <div>
           {content}

@@ -33,6 +33,9 @@ export const Container = styled.div`
     h4 {
       overflow: hidden;
       max-width: 500px;
+      @media(max-width: 550px) {
+        max-width:200px;
+      }
     }
   div {
     div {

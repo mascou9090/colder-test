@@ -6,15 +6,24 @@ import * as C from './style';
 import { ModalDelet } from '../../components/Modal';
 import { ModalEdit } from '../../components/ModalEdit';
 import { Load } from '../../components/Load';
+import { useEffect, useState } from 'react';
 
 export const MidMain = () => {
-  
+  const [datas, setDatas] = useState();
+
+
+
   const { currentDatas } = useSelector(
-    (rootReducer:any) => rootReducer.getReducer);
+    (rootReducer: any) => rootReducer.getReducer);
   const { currentModalDelet } = useSelector(
-    (rootReducer:any) => rootReducer.modalReducerDelet);
+    (rootReducer: any) => rootReducer.modalReducerDelet);
   const { currentModalEdit } = useSelector(
-    (rootReducer:any) => rootReducer.modalReducerEdit);
+    (rootReducer: any) => rootReducer.modalReducerEdit);
+
+  useEffect(() => {
+    setDatas(currentDatas);
+  },[datas]);
+
 
   return (
     <C.Container>
@@ -22,9 +31,9 @@ export const MidMain = () => {
       <Post />
       {!currentDatas && <Load />}
       {currentDatas && currentDatas?.results.map(
-        (el:any) => 
+        (el: any) =>
           <Posts key={el.id} props={el} />
-        )}
+      )}
       {currentModalDelet && <ModalDelet />}
       {currentModalEdit && <ModalEdit />}
     </C.Container>

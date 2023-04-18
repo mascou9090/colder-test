@@ -24,16 +24,16 @@ export const Container = styled.div`
       border: solid 1px #777777;
     }
   }
-  @media (max-width:400px) {
-    width:300px
+  @media (max-width: 500px) {
+    width:280px;
+    margin:1rem;
     h2 {
-      margin:0.5rem;
+      margin:0.5rem 1rem;
     }
     div {
-      margin: 0.5rem;
+      margin:0.8rem 0.5rem 0.5rem 0;
     }
   }
-  
 `;
 
 export const Button = styled.div<{valueInput?: string}>`
@@ -63,6 +63,6 @@ export const Button = styled.div<{valueInput?: string}>`
         )};
     }
     @media (max-width: 500px) {
-      margin:1rem 0 0 9rem !important;
+      margin:0 0 0 5rem !important;
     }
 `;
