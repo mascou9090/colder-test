@@ -10,12 +10,13 @@ export const Post = () => {
   const [inputValue, setInputValue] = useState('');
   const [textValue, setTextValue] = useState('');
   const [corButton, setCorButton] = useState(false);
+  const [dataRenders, setDataRenders] = useState();
   const dispatch = useDispatch();
   const { currentUser } = useSelector((rootReducer:any) => rootReducer.userReducer)
 
   useEffect(() => {
     inputValue && textValue ? setCorButton(true) : setCorButton(false);
-  }, [inputValue, textValue]);
+  }, [inputValue, textValue, dataRenders]);
 
   const handlePrevent = (e:any) => {
     !inputValue && !textValue && e.preventDefault(); 
@@ -29,7 +30,8 @@ export const Post = () => {
       "title": inputValue,
       "content": textValue,
     });
-    const posts = await actionGetRequest();   
+    const posts = await actionGetRequest();
+    setDataRenders(posts);
     dispatch(getPosts(posts));
   };
 

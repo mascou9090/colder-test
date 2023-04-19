@@ -39,5 +39,8 @@ export const Container = styled.header`
   }
   @media (max-width: 800px) {
     justify-content: center;
+    h1 {
+      padding: 2rem 1rem;
+    }
   }
 `;

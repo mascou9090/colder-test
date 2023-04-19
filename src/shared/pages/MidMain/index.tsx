@@ -18,16 +18,18 @@ export const MidMain = () => {
   const { currentModalEdit } = useSelector(
     (rootReducer: any) => rootReducer.modalReducerEdit);
 
+  const { results } = currentDatas;
+
   useEffect(() => {
-    setDatas(currentDatas);
+    results && setDatas(results);
   },[datas]);
 
   return (
     <C.Container>
       <Header />
       <Post />
-      {!currentDatas && <Load />}
-      {currentDatas && currentDatas?.results.map(
+      {!results && <Load />}
+      {results && results?.map(
         (el: any) =>
           <Posts key={el.id} props={el} />
       )}
