@@ -21,7 +21,7 @@ export const MidMain = () => {
   const { results } = currentDatas;
 
   useEffect(() => {
-    results && setDatas(results);
+    setDatas(results);
   },[datas]);
 
   return (

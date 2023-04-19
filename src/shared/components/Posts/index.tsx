@@ -3,8 +3,10 @@ import * as C from './style';
 import { loginModalDelet, loginModalEdit } from '../../actions/actions';
 import { isOpenModalDelet } from '../../redux/modalDelet/action-types';
 import { isOpenModalEdit } from '../../redux/modalEdit/action-types';
+//import { useEffect, useState } from 'react';
 
 export const Posts = ({props}: any) => {
+  //const [datas, setDatas] = useState()
 
   const { id, username, title, created_datetime, content } = props;
 
@@ -26,6 +28,10 @@ export const Posts = ({props}: any) => {
   const handleModalEdit = () => {
     dispatch(loginModalEdit(isOpenModalEdit.OPEN, id))
   };
+
+  // useEffect(() => {
+  //   setDatas(props);
+  // },[datas])
     
   return (
     <C.Container>
